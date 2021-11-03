@@ -5,6 +5,13 @@ const getAll = (_req, res) => {
   res.status(200).json(tasks);
 };
 
+const create = (req, res) => {
+  const { task } = req.body;
+  const taksCreated = await tasksService.create({ task });
+  res.status(201).json(taksCreated);
+}
+
 module.exports = {
   getAll,
+  create,
 }
