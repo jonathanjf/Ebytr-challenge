@@ -13,6 +13,10 @@ const update = async (id) => {
   await tasksModel.update(id);
 };
 
+const remove = async (id) => {
+  await tasksModel.remove(id);
+}
+
 module.exports = {
   getAll,
   create,
