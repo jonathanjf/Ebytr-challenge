@@ -11,6 +11,12 @@ const create = (req, res) => {
   res.status(201).json(taksCreated);
 }
 
+const update = (req, res) => {
+  const { id } = req.params;
+  const taskUpdated = await tasksService.update(id);
+  res.status(201).json(taskUpdated);
+}
+
 const remove = (req, res) => {
   const { id } = req.params;
   await tasksService.remove(id);
