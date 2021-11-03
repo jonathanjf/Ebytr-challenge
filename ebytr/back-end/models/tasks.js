@@ -9,7 +9,12 @@ const create = async (task) => connection()
 const update = async (id) => connection()
   .then((db) => db.collection('tasks').updateOne(id));
 
+const remove = async (id) => connection()
+  .then((db) => db.collection('tasks').deleteOne(id));
+
 module.exports = {
   getAll,
   create,
+  update,
+  remove,
 }
