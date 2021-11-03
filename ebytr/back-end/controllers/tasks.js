@@ -27,4 +27,5 @@ module.exports = {
   getAll,
   create,
   remove,
+  update,
 }
