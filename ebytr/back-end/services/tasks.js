@@ -9,7 +9,12 @@ const create = async (id) => {
   await tasksModel.create(id);
 }
 
+const update = async (id) => {
+  await tasksModel.update(id);
+};
+
 module.exports = {
   getAll,
   create,
+  update,
 }
