@@ -11,7 +11,14 @@ const create = (req, res) => {
   res.status(201).json(taksCreated);
 }
 
+const remove = (req, res) => {
+  const { id } = req.params;
+  await tasksService.remove(id);
+  res.status(200).json( { message: 'tarefa excluida com sucesso' } );
+}
+
 module.exports = {
   getAll,
   create,
+  remove,
 }
