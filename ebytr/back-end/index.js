@@ -5,7 +5,7 @@ const tasksController = require('./controllers/tasks');
 
 const app = express();
 
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 app.get('/tasks', tasksController.getAll);
 

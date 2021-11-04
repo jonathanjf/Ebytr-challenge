@@ -2,11 +2,12 @@ const tasksModel = require('../models/tasks');
 
 const getAll = async () => {
   const tasks = await tasksModel.getAll();
+  console.log('chegou no service', tasks);
   return tasks;
 }
 
-const create = async (id) => {
-  await tasksModel.create(id);
+const create = async (task) => {
+  await tasksModel.create(task);
 }
 
 const update = async (id) => {
