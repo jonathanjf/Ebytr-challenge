@@ -1,8 +1,19 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
-const app = express(); // 1
+const tasksController = require('./controllers/tasks');
 
-app.get('/hello', handleHelloWorldRequest); // 2
+const app = express();
+
+app.use(bodyParser.json());
+
+app.get('/tasks', tasksController.getAll);
+
+app.post('/tasks', tasksController.create);
+
+app.delete('/tasks/:id', tasksController.remove);
+
+app.put('/tasks/:id', tasksController.update);
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
